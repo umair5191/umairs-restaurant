@@ -52,6 +52,10 @@ global.db = db; // Making the database accessible for all routes
 const mainRoutes = require("./routes/main");
 app.use('/', mainRoutes);
 
+// Loading the route handlers for menu pages
+const menuRoutes = require('./routes/items');
+app.use('/menu', menuRoutes);
+
 // Starting the server on port 8000
 app.listen(port, () => {
     console.log('Node app listening on port 8000!');
