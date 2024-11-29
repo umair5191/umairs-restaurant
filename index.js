@@ -46,7 +46,7 @@ db.connect((err) => {
         console.log('Connected to the database');
     }
 });
-global.db = db;
+global.db = db; // Making the database accessible for all routes
 
 // Loading the route handlers for index and about pages
 const mainRoutes = require("./routes/main");
