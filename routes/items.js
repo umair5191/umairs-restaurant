@@ -26,4 +26,16 @@ router.get('/vegan', function(req, res, next) {
      })
 })
 
+// Handling route to display the saver menu
+router.get('/saver', function(req, res, next) {
+    let sqlquery = "SELECT * FROM menu WHERE price < 3"; // query database to get all items under £3
+    // executing sql query
+    db.query(sqlquery, (err, result) => {
+        if (err) {
+            next(err);
+        }
+        res.render("saver.ejs", {menuItems: result}); // displaying the saver items
+     })
+})
+
 module.exports = router;
