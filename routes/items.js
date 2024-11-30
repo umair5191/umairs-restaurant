@@ -50,7 +50,7 @@ router.get('/search_result', function (req, res, next) {
         if (err) {
             next(err);
         }
-        res.render("menu.ejs", {menuItems: result});
+        res.render("search_results.ejs", {menuItems: result}); // displaying the search results
      }) 
 })
 
