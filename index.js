@@ -16,6 +16,9 @@ app.set('view engine', 'ejs');
 // Setting up the body parser
 app.use(express.urlencoded({ extended: true }));
 
+// Setting up the express sanitizer
+app.use(expressSanitizer());
+
 // Setting up public folder (for css and statis js)
 app.use(express.static('public'));
 
