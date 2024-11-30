@@ -43,8 +43,10 @@ router.get('/search',function(req, res, next){
     res.render("search.ejs")
 })
 router.get('/search_result', function (req, res, next) {
+    // Sanitizing the search to prevents harmful attacks
+    sanitizedText = req.sanitize(req.query.search_text);
     // Search the database
-    let sqlquery = "SELECT * FROM menu WHERE name LIKE '%" + req.query.search_text + "%'"; // query database to get result
+    let sqlquery = "SELECT * FROM menu WHERE name LIKE '%" + sanitizedText + "%'"; // query database to get result
     // execute sql query
     db.query(sqlquery, (err, result) => {
         if (err) {
