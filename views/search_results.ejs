@@ -1,3 +1,4 @@
+<!-- This page returns the search results -->
 <!doctype html>
 <html>
   <head>
@@ -7,9 +8,12 @@
   <body>
     <h1>Search Results</h1>
     <h2>Here is a list of any matching items on our menu:</h2>
+    <% if (menuItems.length === 0) { %>
+        <p>No items found matching your search.</p> <!-- Message displayed if no items match -->
+    <% } %>
     <ul>
       <% menuItems.forEach(function(item) { %>
-        <li><%= item.name %>, £<%= item.price%> </li>
+        <li><%= item.name %>, £<%= item.price%> </li> <!-- Displays all matching items -->
       <% }) %>
     </ul>
     </body>
