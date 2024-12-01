@@ -1,3 +1,4 @@
+<!-- This page shows a list of all items on the menu -->
 <!doctype html>
 <html>
   <head>
@@ -8,7 +9,7 @@
     <h1>Umair's Restaurant Menu</h1>
     <h2>Here are all of the items on our menu:</h2>
     <ul>
-      <% menuItems.forEach(function(item) { %>
+      <% menuItems.forEach(function(item) { %>  <!-- Iterates through each menu item and displays them to user -->
         <li><%= item.name %>, £<%= item.price%> </li>
       <% }) %>
     </ul>

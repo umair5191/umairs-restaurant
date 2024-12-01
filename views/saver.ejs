@@ -1,3 +1,4 @@
+<!-- This page shows all of the items under £3.00 on the menu -->
 <!doctype html>
 <html>
   <head>
@@ -8,7 +9,7 @@
     <h1>Umair's Restaurant Saver Menu</h1>
     <h2>Here are all of the items under £3.00 on our menu:</h2>
     <ul>
-      <% menuItems.forEach(function(item) { %>
+      <% menuItems.forEach(function(item) { %>  <!-- Iterates through each menu item under £3.00 and displays them to user -->
         <li><%= item.name %>, £<%= item.price%> </li>
       <% }) %>
     </ul>
