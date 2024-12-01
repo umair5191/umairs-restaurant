@@ -7,9 +7,16 @@
   <body>
     <h1>Add item to our menu</h1>
     <h2>Here at Umair's Restaurant we strive to make every customer happy! If you can't find what you desire, simply add it to our menu below: </h2>
-    <form method="POST" action="/bookadded">
+    <form method="POST" action="/menu/itemadded">
         <p>Item name: <input id="name" type="text" name="name" value="" /></p>
         <p>Price: <input id="price" type="text" name="price" value="" /></p>
+        <p>
+            Vegan: 
+            <select id="vegan" name="vegan"> <!-- Dropdown menu to select yes or no for vegan -->
+                <option value="false">No</option>
+                <option value="true">Yes</option>
+            </select>
+        </p>
         <input type="submit" value="Add Item" />
       </form>
   </body>
