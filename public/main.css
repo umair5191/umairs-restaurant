@@ -1,12 +1,12 @@
 html, body {
-  height: 100%; /* Ensures full viewport height */
+  height: 90%; /* Ensures full viewport height */
   margin: 0; /* Removes default margin */
 }
 
 h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 5vw;
-    color: darkcyan;
+    color: rgb(255, 255, 255);
     text-align: center;
 }
 
@@ -17,10 +17,11 @@ h2 {
 }
 
 body {
-  background-image: url('https://www.shutterstock.com/image-vector/vector-isolated-one-round-plate-600nw-2217476735.jpg');
-  background-size: contain;
+  background-image: url('https://media.printables.com/media/prints/732427/images/5728425_84f4b304-d285-4b56-a972-c6c9a314f3fd_7115177e-1368-43d9-a294-1d024e73e5f9/assembly-image.gif');
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 
@@ -30,23 +31,23 @@ p,li {
 }
 
 a:link {
-    color: orangered;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     padding:5px;
   }
   
   /* visited link */
   a:visited {
-    color: tomato;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     padding:5px;
   }
   
   /* mouse over link */
   a:hover {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
-    background-color: orangered;
+    background-color: rgb(255, 255, 255);
     padding:5px;
   }
   
