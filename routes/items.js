@@ -72,7 +72,7 @@ router.post('/itemadded', [check('price').isDecimal(), check('name').notEmpty()]
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         // Makes user input data again if invalid
-        res.redirect('/menu/add');
+        res.render('add_error.ejs');
     }
 
     // saving data in database
@@ -84,7 +84,7 @@ router.post('/itemadded', [check('price').isDecimal(), check('name').notEmpty()]
             next(err);
         }
         else
-            res.send(' This item has been added to our menu: Name: '+ name + ', Price: '+ price + ', Vegan: '+ vegan);
+        res.render('item_added.ejs', { name: name, price: price, vegan: vegan });
     })
 }) 
 
