@@ -12,8 +12,8 @@ h1 {
 
 h2 {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 4vw;
-    color: cadetblue;
+    font-size: 2vw;
+    color: rgb(255, 255, 255);
 }
 
 body {
@@ -28,6 +28,7 @@ body {
 p,li {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2vw;
+    color:rgb(255, 255, 255)
 }
 
 a:link {
