@@ -70,7 +70,7 @@ router.post('/itemadded', [check('price').isDecimal(), check('name').notEmpty()]
 
     // Checking if inputs were valid using express-validator
     const errors = validationResult(req);
-    if (!errors.isEmpty()) {
+    if (!errors.isEmpty() || price < 0) { // ensures price isn't negative
         // Makes user input data again if invalid
         res.render('add_error.ejs');
     }
