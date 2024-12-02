@@ -13,10 +13,10 @@ CREATE TABLE IF NOT EXISTS menu (
 # Creating the table for the users
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) NOT NULL UNIQUE, -- ensures there aren't duplicate usernames
+    username VARCHAR(50) NOT NULL, 
     first VARCHAR(50) NOT NULL,
     last VARCHAR(50) NOT NULL,
-    email VARCHAR(100) NOT NULL UNIQUE, -- ensures there aren't duplicate emails
+    email VARCHAR(100) NOT NULL,
     hashedPassword VARCHAR(255) NOT NULL
 );
 
