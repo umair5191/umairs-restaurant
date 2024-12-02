@@ -59,6 +59,10 @@ app.use('/', mainRoutes);
 const menuRoutes = require('./routes/items');
 app.use('/menu', menuRoutes);
 
+// Loading the route handlers for login/logout and register pages
+const userRoutes = require('./routes/users');
+app.use('/users', userRoutes);
+
 // Starting the server on port 8000
 app.listen(port, () => {
     console.log('Node app listening on port 8000!');
