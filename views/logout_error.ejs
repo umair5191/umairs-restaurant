@@ -1,0 +1,16 @@
+<!-- This page informs user they must be logged in to logout -->
+<!doctype html>
+<html>
+  <head>
+    <title>Logout</title>
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+  </head>
+  <body>
+    <h1>Logout</h1>
+    <h2>Logout Error</h2>
+    <p>You must be logged in to logout. Click below to login.</p>  <!-- User is informed they must login first to logout -->
+    <form method="GET" action="/users/login">
+        <input type="submit" value="Login" />  <!-- Redirects user to login page -->
+      </form>
+  </body>
+</html>
