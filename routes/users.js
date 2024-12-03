@@ -39,7 +39,12 @@ router.post('/registered', [check('email').isEmail(), check('password').isLength
 
 // Handling route to login
 router.get('/login', function (req, res, next) {
-    res.render('login.ejs');
+    if (req.session.userId) { // Checking if user is already logged in
+        res.render('./login_again', {username: req.session.userId}); // If user is already logged in, they are informed and prompted to logout
+    }
+    else {
+        res.render('./login.ejs'); // If user is not logged in, they are prompted to login
+    }
 });
 router.post('/loggedin', function (req, res, next) {
     let sqlquery = "SELECT hashedPassword FROM users where username = ?";
@@ -67,7 +72,7 @@ router.post('/loggedin', function (req, res, next) {
 
 // Handling route to logout
 router.get('/logout', function (req, res, next) {
-    if (!req.session.userId) {
+    if (!req.session.userId) { // Checking if user is logged in
         res.render('./logout_error'); // If user is not logged in, they are informed that they cannot log out and prompted to login
     }
     else {
