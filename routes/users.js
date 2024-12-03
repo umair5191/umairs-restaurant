@@ -48,15 +48,12 @@ router.post('/loggedin', function (req, res, next) {
             next(err);
         }
         if (result.length == 0) {
-            res.render('./login_error'); // If username is not found, user is informed and prompted to try again
+            return res.render('./login_error'); // If username is not found, user is informed and prompted to try again
         }
         let hashedPassword = result[0].hashedPassword;
         // Comparing the password supplied with the password in the database
         bcrypt.compare(req.sanitize(req.body.password), hashedPassword, function(err, result) { // sanitizing the password to prevent harmful attacks
-            if (err) {
-                next(err);
-            }
-            else if (result == true) {
+            if (result == true) {
                 // Saving user session here, when login is successful
                 req.session.userId = req.sanitize(req.body.username);
                 res.render('./loggedin', {username: req.sanitize(req.body.username)}); // If password is correct, user is informed that they are logged in
@@ -66,6 +63,17 @@ router.post('/loggedin', function (req, res, next) {
             }
         })
     })
+})
+
+// Handling route to logout
+router.get('/logout', function (req, res, next) {
+    if (!req.session.userId) {
+        res.render('./logout_error'); // If user is not logged in, they are informed that they cannot log out and prompted to login
+    }
+    else {
+        req.session.destroy(); // If user is logged in, their session is destroyed
+        res.render('./loggedout'); // User is informed that they have been logged out
+    }
 })
 
 module.exports = router;
