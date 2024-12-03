@@ -1,0 +1,16 @@
+<!-- This page confirms to the user that they have successfully logged out -->
+<!doctype html>
+<html>
+  <head>
+    <title>Successful Logout</title>
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+  </head>
+  <body>
+    <h1>Successful Logout!</h1>
+    <h2>Goodbye! You have successfully logged out.</h2>
+    <p>Click below to login again.</p>
+    <form method="GET" action="/users/login">
+        <input type="submit" value="Login" />  <!-- Redirects user to login page -->
+      </form>
+  </body>
+</html>
