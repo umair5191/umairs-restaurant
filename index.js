@@ -63,6 +63,10 @@ app.use('/menu', menuRoutes);
 const userRoutes = require('./routes/users');
 app.use('/users', userRoutes);
 
+// Loading the route handlers for nutritional information API
+const nutritionRoutes = require('./routes/nutrition');
+app.use('/nutrition', nutritionRoutes);
+
 // Starting the server on port 8000
 app.listen(port, () => {
     console.log('Node app listening on port 8000!');
