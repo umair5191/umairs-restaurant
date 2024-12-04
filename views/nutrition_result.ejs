@@ -1,0 +1,26 @@
+<!-- This page returns the nutritonal results -->
+<!doctype html>
+<html>
+  <head>
+    <title>Search Results</title>
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+  </head>
+  <body>
+    <h1>Nutritional Results</h1>
+    <% if (nutrition) { %>
+        <h2>Here is the nutritional information for <%= item %> per 100g:</h2>
+        <ul>  <!-- Displays the nutritional information for the item -->
+            <li>Total Fat: <%= nutrition.fat_total_g %> g</li>
+            <li>Saturated Fat: <%= nutrition.fat_saturated_g %> g</li>
+            <li>Sodium: <%= nutrition.sodium_mg %> mg</li>
+            <li>Potassium: <%= nutrition.potassium_mg %> mg</li>
+            <li>Cholesterol: <%= nutrition.cholesterol_mg %> mg</li>
+            <li>Carbohydrates: <%= nutrition.carbohydrates_total_g %> g</li>
+            <li>Fiber: <%= nutrition.fiber_g %> g</li>
+            <li>Sugar: <%= nutrition.sugar_g %> g</li>
+        </ul>
+    <% } else { %>
+        <p>No nutritional information found.</p>  <!-- Informs user that item wasn't found -->
+    <% } %>
+    </body>
+</html>
