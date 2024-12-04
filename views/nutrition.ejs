@@ -1,0 +1,16 @@
+<!-- This page allows users to search for nutritional information using API -->
+<!doctype html>
+<html>
+  <head>
+    <title>Nutritional Information</title>
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+  </head>
+  <body>
+    <h1>Nutritional Information</h1>
+    <h2>Enter an item below to get its nutritional information:</h2>
+    <form method="POST" action="/nutrition/search">
+        <p>Item: <input id="query" type="text" name="query"/></p>
+        <input type="submit" value="Search" />  <!-- Allows user to search for nutritional info -->
+      </form>
+  </body>
+</html>
