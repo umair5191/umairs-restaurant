@@ -2,12 +2,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Item Added</title>
     <link rel="stylesheet" href="/main.css">
 </head>
 <body>
+    <nav> 
+        <p1><a href="/"> Return to Home</a></p1>  <!-- Link to the home page -->
+    </nav>
     <h1>Item Added Successfully!</h1>
     <p>The following item has been added to our menu:</p>
     <ul>
@@ -15,6 +16,6 @@
         <li><strong>Price:</strong> £<%= price %></li>
         <li><strong>Vegan:</strong> <%= vegan ? 'Yes' : 'No' %></li>
     </ul>
-    <a href="/menu/add">Add Another Item</a>
+    <p><a href="/menu/add">Add Another Item</a></p>
 </body>
 </html>
