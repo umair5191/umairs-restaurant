@@ -9,3 +9,6 @@ Main Features:
 - Users can also find nutritional information about an item of their choice (using API Ninjas).
 - Provides an API to access its data.
 - Allows users to switch to dark mode for better accessbility.
+
+To access the website, simply visit this URL:
+https://www.doc.gold.ac.uk/usr/121/
