@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
         if (err) {
             next(err);
         }
-        res.render("menu.ejs", {menuItems: result}); // displaying the menu items
+        res.render("menus/menu.ejs", {menuItems: result}); // displaying the menu items
      })
 })
 
@@ -23,7 +23,7 @@ router.get('/vegan', function(req, res, next) {
         if (err) {
             next(err);
         }
-        res.render("vegan.ejs", {menuItems: result}); // displaying the vegan items
+        res.render("menus/vegan.ejs", {menuItems: result}); // displaying the vegan items
      })
 })
 
@@ -35,13 +35,13 @@ router.get('/saver', function(req, res, next) {
         if (err) {
             next(err);
         }
-        res.render("saver.ejs", {menuItems: result}); // displaying the saver items
+        res.render("menus/saver.ejs", {menuItems: result}); // displaying the saver items
      })
 })
 
 // Handling route to search for items
 router.get('/search',function(req, res, next){
-    res.render("search.ejs");
+    res.render("search/search.ejs");
 })
 router.get('/search_result', function (req, res, next) {
     // Sanitizing the search to prevents harmful attacks
@@ -54,13 +54,13 @@ router.get('/search_result', function (req, res, next) {
         if (err) {
             next(err);
         }
-        res.render("search_results.ejs", {menuItems: result}); // displaying the search results
+        res.render("search/search_results.ejs", {menuItems: result}); // displaying the search results
      }) 
 })
 
 // Handling route to add a new item to menu
 router.get('/add', function (req, res, next) {
-    res.render('add.ejs');
+    res.render('add/add.ejs');
 })
 router.post('/itemadded', [check('price').isDecimal(), check('name').notEmpty()], function (req, res, next) { // checks if price is a valid decimal and name isn't empty
     // Sanitiizing the input to prevent harmful attacks
@@ -72,7 +72,7 @@ router.post('/itemadded', [check('price').isDecimal(), check('name').notEmpty()]
     const errors = validationResult(req);
     if (!errors.isEmpty() || price < 0) { // ensures price isn't negative
         // Makes user input data again if invalid
-        res.render('add_error.ejs');
+        res.render('add/add_error.ejs');
     }
 
     // saving data in database
@@ -84,7 +84,7 @@ router.post('/itemadded', [check('price').isDecimal(), check('name').notEmpty()]
             next(err);
         }
         else
-        res.render('item_added.ejs', { name: name, price: price, vegan: vegan });
+        res.render('add/item_added.ejs', { name: name, price: price, vegan: vegan });
     })
 }) 
 
