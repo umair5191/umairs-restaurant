@@ -3,10 +3,20 @@ html, body {
   margin: 0; /* Removes default margin */
 }
 
-nav { /* Putting home button in the top right */
+p1 { /* Putting home button in the top left */
   position: absolute;
   top: 0.75vw;
   left: 0vw;
+}
+
+#darkmode { /*Styling and placing dark mode button in top right */
+  position: absolute;
+  top: 0.75vw;
+  right: 0.2vw;
+  width: 11vw;
+  height: 2vw;
+  font-size: 1vw;
+  font-style: italic
 }
 
 p1 { /* Styling for the home button */
@@ -37,6 +47,10 @@ body {
   background-attachment: fixed;
 }
 
+body.dark-mode { /* Dark mode styling */
+  background-color: #121212; /* Dark background */
+  background-image: none;
+}
 
 p,li {
     font-family: Arial, Helvetica, sans-serif;
